@@ -5,6 +5,7 @@ import { solveSimplex } from './utils/lp-solver';
 import { LinearGraph } from './components/LinearGraph';
 import { SimplexTableau } from './components/SimplexTableau';
 import { motion, AnimatePresence } from 'framer-motion';
+import { PasswordGate } from './components/PasswordGate';
 
 export default function App() {
   const [problem, setProblem] = useState<LPProblem>({
@@ -76,6 +77,7 @@ export default function App() {
   };
 
   return (
+    <PasswordGate>
     <div className="flex flex-col h-screen bg-slate-50 font-sans text-slate-800 overflow-hidden">
       {/* Top Navigation Header */}
       <header className="h-16 border-b border-slate-200 bg-white flex items-center justify-between px-8 shrink-0">
@@ -341,5 +343,6 @@ export default function App() {
         </div>
       </footer>
     </div>
+    </PasswordGate>
   );
 }
